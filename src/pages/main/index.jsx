@@ -26,7 +26,7 @@ const Main = () => {
                                         <Button color>Explore</Button>
                                     </div>
                                 </_.FlexBox>
-                                <_.Img width={564} height={420} src={walk}></_.Img>
+                                <_.Img src={walk} />
                             </_.CarouselInBox>
                         </_.Carousel>
                     </_.CarouselOutBox>

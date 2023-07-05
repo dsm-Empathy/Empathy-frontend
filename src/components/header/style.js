@@ -18,8 +18,8 @@ export const LeftBox = styled.div`
 `
 
 export const Img = styled.img`
-    width: ${props => props.width || 60}px;
-    height: ${props => props.height || 60}px;
+    width: 60px;
+    height: 60px;
     object-fit: cover;
 `
 

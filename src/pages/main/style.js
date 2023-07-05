@@ -98,8 +98,8 @@ export const Explain = styled.div`
 `
 
 export const Img = styled.img`
-    width: ${props => props.width || 60}px;
-    height: ${props => props.height || 60}px;
+    width: 564px;
+    height: 420px;
     object-fit: cover;
 `
 
