@@ -29,6 +29,7 @@ export const Triangle = styled.div`
 
     ${(props) => props.bool &&
     css`
+        cursor: pointer;
         &:hover {
             border-bottom: 18px solid ${Colors.Neutral10};
         }

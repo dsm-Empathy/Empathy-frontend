@@ -4,6 +4,8 @@ export const Colors = {
     Neutral7: '#8CA2C0',
     Neutral8: '#7B95B7',
     Neutral10: '#486284',
+    Blue: '#001686',
+    LightBlue: '#8FA1FF',
     LightGray: '#E4E4E4',
     Gray: '#B9B9B9',
     Black: '#000000',

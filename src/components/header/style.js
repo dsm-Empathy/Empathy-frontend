@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { Colors } from "../../styles/theme/color";
 
 export const Container = styled.div`
@@ -49,3 +49,60 @@ export const Text = styled.span`
     letter-spacing: 0.5px;
     cursor: pointer;
 `
+
+export const SearchBox = styled.div`
+    width: 242px;
+    height: 30px;
+    border-radius: 19px;
+    border: 1px solid ${Colors.Gray};
+    background-color: ${Colors.Neutral0};
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    position: absolute;
+    margin-left: -186px;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-name: ${props => props.bool ? focus : blur};
+    transform-origin: center right;
+`
+
+export const Input = styled.input`
+    color: ${Colors.Neutral10};
+    font-size: 16px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.5px;
+    border: none;
+    outline: none;
+    width: 220px;
+`
+
+const focus = () => keyframes`
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+        pointer-events:none;
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+        pointer-events: auto;
+    }
+`;
+
+const blur = () => keyframes`
+    0% {
+        opacity: 1;
+        transform: scaleX(1);
+        pointer-events:auto;
+    }
+    100% {
+        opacity: 0;
+        transform: scaleX(0);
+        pointer-events: none;
+    }
+`;
