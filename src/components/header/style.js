@@ -106,3 +106,11 @@ const blur = () => keyframes`
         pointer-events: none;
     }
 `;
+
+export const UserCircle = styled.div`
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    background-color: ${Colors.Neutral0};
+    border: 1px solid ${Colors.Gray};
+`

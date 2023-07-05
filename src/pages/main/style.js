@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Colors } from "../../styles/theme/color";
 
 export const Container = styled.div`
@@ -26,14 +26,11 @@ export const Triangle = styled.div`
     border-bottom: 18px solid ${Colors.Gray};
     transform: rotate(${props => props.rotate ?? 0}deg);
     transition: 0.3s;
-
-    ${(props) => props.bool &&
-    css`
-        cursor: pointer;
-        &:hover {
-            border-bottom: 18px solid ${Colors.Neutral10};
-        }
-    `}
+    cursor: pointer;
+    
+    &:hover {
+        border-bottom: 18px solid ${Colors.Neutral10};
+    }
 `
 
 export const CenterBox = styled.div`
@@ -50,8 +47,12 @@ export const CarouselOutBox = styled.div`
 
 export const Carousel = styled.div`
     display: flex;
+    width: auto;
     height: 420px;
     transition: 0.3s;
+    & div {
+        flex-shrink: 0;
+    }
 `
 
 export const CarouselInBox = styled.div`

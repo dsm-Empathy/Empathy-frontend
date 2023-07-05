@@ -11,14 +11,15 @@ export const Container = styled.div`
 export const ContentBox = styled.div`
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 47px;
+    margin: 120px 0;
 `
 
 export const RightBox = styled.div`
     display: flex;
     flex-direction: column;
-    width: 612px;
+    margin: 17px;
+    width: 618px;
 `
 
 export const subTitle = styled.span`

@@ -32,6 +32,17 @@ export const BetweenBox = styled.div`
     justify-content: space-between;
 `
 
+export const RightBox = styled.div`
+    display: flex;
+    gap: 10px;
+`
+
+export const Img = styled.img`
+    width: 15px;
+    height: 15px;
+    object-fit: cover;
+`
+
 export const Title = styled.span`
     color: ${Colors.Blue};
     font-size: 16px;

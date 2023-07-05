@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styled, { CSS } from "styled-components";
 
 const Total = styled.div`
@@ -44,6 +45,7 @@ const Text = styled.div`
   padding: 14px;
   letter-spacing: 0.15px;
   color: #486284;
+  cursor: pointer;
 `;
 
 const Line = styled.div`
@@ -52,6 +54,8 @@ const Line = styled.div`
 `;
 
 const Announcement = () => {
+  const navigate = useNavigate();
+
   return (
     <Total>
       <Middle>
@@ -60,11 +64,11 @@ const Announcement = () => {
       </Middle>
 
       <Presentation>
-        <Text>건강보험 지역가입자의 보험료 경감</Text>
+        <Text onClick={() => navigate('/announcement/detail/1')}>건강보험 지역가입자의 보험료 경감</Text>
         <Line />
       </Presentation>
       <Presentation>
-        <Text>장애인 등록 진단비 지급</Text>
+        <Text onClick={() => navigate('/announcement/detail/0')}>장애인 등록 진단비 지급</Text>
         <Line />
       </Presentation>
     </Total>

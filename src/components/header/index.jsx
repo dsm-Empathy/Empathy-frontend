@@ -3,8 +3,10 @@ import * as _ from './style'
 import { Button } from "../Button";
 import Logo from '../../assets/img/Logo.png'
 import { useLocation, useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 const Header = () => {
+    const [cookies,,] = useCookies(['accessToken']);
     const navigate = useNavigate();
     const location = useLocation()
     const query = Object.fromEntries(decodeURI(location.search).replace('?', '').split('&').map((v) => v.split('=')));
@@ -21,7 +23,7 @@ const Header = () => {
         } else {
             setData('')
         }
-    }, [location, query])
+    }, [location])
 
     return (
         <_.Container>
@@ -51,7 +53,12 @@ const Header = () => {
                 }
                 <_.Text onClick={() => navigate('/Q&A')}>Q&A</_.Text>
                 <_.Text onClick={() => navigate('/Announcement')}>Announcement</_.Text>
-                <Button onClick={() => navigate('/login')}>login</Button>
+                {
+                    cookies.accessToken ?
+                    <_.UserCircle />
+                    :
+                    <Button onClick={() => navigate('/login')}>login</Button>
+                }
             </_.RightBox>
         </_.Container>
     )
