@@ -1,5 +1,6 @@
 import styled, { keyframes } from "styled-components";
 import { Colors } from "../../styles/theme/color";
+import personIcon from "../../assets/img/personIcon.png"
 
 export const Container = styled.div`
     width: 100%;
@@ -113,4 +114,6 @@ export const UserCircle = styled.div`
     border-radius: 100px;
     background-color: ${Colors.Neutral0};
     border: 1px solid ${Colors.Gray};
+    background-image: url(${personIcon});
+    background-size: cover;
 `

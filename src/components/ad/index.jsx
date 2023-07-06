@@ -48,6 +48,7 @@ const Ad = ({number = 0, close = false, Fclose}) => {
     return (
         <_.Container
             onMouseDown={e => {
+                e.preventDefault()
                 const width = e.currentTarget.getBoundingClientRect().width;
                 const height = e.currentTarget.getBoundingClientRect().height;
                 const x = e.clientX - (window.screenX + e.currentTarget.getBoundingClientRect().left)
