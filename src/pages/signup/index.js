@@ -36,7 +36,7 @@ function SignupPage() {
 
   const SignupUser = () => {
     axios
-      .post("http://192.168.0.33:8080/user/signup", {
+      .post(`${process.env.REACT_APP_URL}/user/signup`, {
         email: Email,
         username: Id,
         password: Password,

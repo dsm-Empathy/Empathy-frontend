@@ -11,13 +11,10 @@ const Search = () => {
     const query = Object.fromEntries(decodeURI(location.search).replace('?', '').split('&').map((v) => v.split('=')));
     const [Data, setData] = useState([]);
 
-    useEffect(() => {
-        if (query.q === undefined || query.q === '') {
-            navigate(-1);
-        }
+    const getData = () => {
         axios({
             method: 'get',
-            url: 'http://192.168.0.33:8080/board/search',
+            url: `${process.env.REACT_APP_URL}/board/search`,
             params: {
                 title: query.q
             }
@@ -28,20 +25,29 @@ const Search = () => {
         .catch((err) => {
             console.log(err)
         })
-    }, [query])
+    }
+
+    useEffect(() => {
+        if (query.q === undefined || query.q === '') {
+            navigate(-1);
+        }
+        else {
+            getData()
+        }
+    }, [query.q])
 
     return (
         <_.Container>
             <_.ContnetBox>
                 {
-                    Data.map((v) => {
+                    Data.map((v, i) => {
                         const date = new Date();
-                        const [StartTime, EndTime] = v.operateTime.split('-').map((v) => v.split(':').map((v) => +v));
+                        const [StartTime, EndTime] = v.operateTime.split(/-|~/).map((v) => v.split(':').map((v) => +v));
                         const FBool = StartTime[0] > date.getHours() || (StartTime[0] === date.getHours() && StartTime[1] >= date.getMinutes())
                         const EBool = EndTime[0] < date.getHours() || (EndTime[0] === date.getHours() && EndTime[1] <= date.getMinutes())
 
                         return (
-                            <_.Content>
+                            <_.Content key={i}>
                                 <_.BetweenBox>
                                     <_.Title>{v.title}</_.Title>
                                     <_.RightBox>

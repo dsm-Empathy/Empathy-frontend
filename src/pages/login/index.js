@@ -24,7 +24,7 @@ function LoginPage() {
 
   const LoginUser = () => {
     axios
-      .post("http://192.168.0.33:8080/user/login", {
+      .post(`${process.env.REACT_APP_URL}/user/login`, {
           username: Id,
           password: Password,
   })

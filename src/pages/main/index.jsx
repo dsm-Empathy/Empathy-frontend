@@ -23,7 +23,7 @@ const Main = () => {
         <_.Container>
             {
                 AnnouncementData.map((v, i) => 
-                    <Ad number={i} close={closeState} Fclose={setClose}/>
+                    <Ad key={i} number={i} close={closeState} Fclose={setClose}/>
                 )
             }
             <_.ContentBox>

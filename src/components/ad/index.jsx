@@ -26,8 +26,8 @@ const Ad = ({number = 0, close = false, Fclose}) => {
             if(x + cursor.current[2] > document.body.clientWidth) {
                 x = document.body.clientWidth - cursor.current[2]
             }
-            if(y - cursor.current[3]> document.body.clientHeight) {
-                y = document.body.clientHeight + cursor.current[3]
+            if(y + cursor.current[3]> document.body.clientHeight) {
+                y = document.body.clientHeight - cursor.current[3]
             }
             setXY([x, y])
         }
